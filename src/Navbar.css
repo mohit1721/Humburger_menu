@@ -1,0 +1,74 @@
+/* Navbar container */
+.navbar {
+  background-color: #2a3353; /* dark blue */
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 10;
+}
+
+/* Brand logo */
+.brand {
+  color: white;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* Hamburger button */
+.menu-toggle {
+  background: none;
+  border: none;
+  font-size: 2rem;
+  color: white;
+  cursor: pointer;
+  display: none;
+}
+
+/* Nav links container */
+.nav-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li {
+  list-style: none;
+  color: white;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-links li:hover {
+  text-decoration: underline;
+}
+
+/* Side drawer (mobile) */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: -100%; /* initially hidden */
+    width: 60%;
+    height: 100vh;
+    background-color: #2b344e;
+    padding-top: 5rem;
+    transition: left 0.3s ease-in-out;
+    z-index: 5;
+  }
+
+  .nav-links.open {
+    left: 0;
+  }
+
+  .nav-links li {
+    padding: 1rem 2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  }
+}
